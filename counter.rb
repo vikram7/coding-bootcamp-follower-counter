@@ -3,7 +3,6 @@ require 'pry'
 
 bootcamps = ["launchacademy_", "turingschool", "gSchool", "thisismetis", "appacademyio", "FlatironSchool", "HackReactor", "devbootcamp", "StartupInst", "GA_boston", "GA"]
 intelligence = Hash.new
-
 config = {
   consumer_key:    ENV["CONSUMER_KEY"],
   consumer_secret: ENV["CONSUMER_SECRET"]
@@ -22,6 +21,7 @@ end
 sorted = intelligence.sort_by { |_, value| -value[:followers] }
 
 printf "%-20s %-10s %-10s %-10s\n", "bootcamp", "#followers", "#friends", "#tweets"
+printf "==================================================\n"
 sorted.each do |bootcamp|
   name = bootcamp.first
   followers = bootcamp.last[:followers]
@@ -29,3 +29,4 @@ sorted.each do |bootcamp|
   tweets = bootcamp.last[:tweets]
   printf "%-20s %-10s %-10s %-10s\n", name, followers, friends, tweets
 end
+printf "==================================================\n"
