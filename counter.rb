@@ -5,7 +5,9 @@ bootcamps = ["launchacademy_", "turingschool", "gSchool", "thisismetis", "appaca
 intelligence = Hash.new
 config = {
   consumer_key:    ENV["CONSUMER_KEY"],
-  consumer_secret: ENV["CONSUMER_SECRET"]
+  consumer_secret: ENV["CONSUMER_SECRET"],
+  access_token: ENV["ACCESS_TOKEN"],
+  access_token_secret: ENV["ACCESS_TOKEN_SECRET"]
 }
 
 client = Twitter::REST::Client.new(config)
@@ -30,3 +32,4 @@ sorted.each do |bootcamp|
   printf "%-20s %-10s %-10s %-10s\n", name, followers, friends, tweets
 end
 printf "==================================================\n"
+
